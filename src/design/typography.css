@@ -1,0 +1,102 @@
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+h1 { font-size: var(--text-5xl); }
+h2 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+/* ── Body text ── */
+p { line-height: 1.7; color: var(--text-secondary); }
+p + p { margin-top: var(--space-3); }
+
+strong { font-weight: 600; color: var(--text-primary); }
+em     { font-style: italic; color: var(--text-secondary); }
+
+/* ── Code ── */
+code, kbd, samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+code {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.1em 0.4em;
+  color: var(--accent-cyan);
+}
+
+/* ── Dr. Vector voice ── */
+.dr-vector-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  white-space: pre-wrap;
+}
+
+.dr-vector-text .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent-cyan);
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  margin-left: 1px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Lab label (small caps mono label) ── */
+.lab-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+}
+
+/* ── Stat display (big number with label) ── */
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: var(--space-1);
+}
+
+/* ── The Lab wordmark ── */
+.wordmark {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.wordmark span {
+  color: var(--accent-cyan);
+}

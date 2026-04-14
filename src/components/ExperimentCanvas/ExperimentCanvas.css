@@ -1,0 +1,10 @@
+.experiment-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  touch-action: none;
+}

@@ -1,0 +1,67 @@
+import { Slider } from './Slider.js';
+import { Toggle } from './Toggle.js';
+import './ParameterPanel.css';
+
+export class ParameterPanel {
+  constructor(controls = []) {
+    this._controls = controls;
+    this._handlers = [];
+    this._widgets = [];
+    this.el = this._build();
+  }
+
+  _emit(key, value) {
+    this._handlers.forEach(fn => fn(key, value));
+  }
+
+  _build() {
+    const panel = document.createElement('div');
+    panel.className = 'param-panel glass';
+
+    const title = document.createElement('div');
+    title.className = 'param-panel-title lab-label';
+    title.textContent = 'Parameters';
+    panel.appendChild(title);
+
+    this._controls.forEach(cfg => {
+      let widget;
+      const onChange = (key, val) => this._emit(key, val);
+
+      if (cfg.type === 'slider') {
+        widget = new Slider({ ...cfg, value: cfg.default ?? cfg.min, onChange });
+        panel.appendChild(widget.el);
+      } else if (cfg.type === 'toggle') {
+        widget = new Toggle({ ...cfg, value: cfg.default ?? false, onChange });
+        panel.appendChild(widget.el);
+      } else if (cfg.type === 'button') {
+        const btn = document.createElement('button');
+        btn.className = 'param-btn';
+        btn.textContent = cfg.label;
+        btn.addEventListener('click', () => this._emit(cfg.key, true));
+        panel.appendChild(btn);
+        widget = { el: btn, key: cfg.key };
+      }
+
+      if (widget) this._widgets.push(widget);
+    });
+
+    return panel;
+  }
+
+  on(fn) {
+    this._handlers.push(fn);
+    return () => { this._handlers = this._handlers.filter(h => h !== fn); };
+  }
+
+  mount(container) {
+    container.appendChild(this.el);
+    return this;
+  }
+
+  reset() {
+    this._widgets.forEach((w, i) => {
+      const cfg = this._controls[i];
+      if (w instanceof Slider) w.setValue(cfg.default ?? cfg.min);
+    });
+  }
+}

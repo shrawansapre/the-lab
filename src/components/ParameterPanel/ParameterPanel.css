@@ -1,0 +1,124 @@
+.param-panel {
+  width: 240px;
+  min-width: 200px;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-self: flex-start;
+}
+
+.param-panel-title {
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-tertiary);
+}
+
+.param-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.param-toggle-row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.param-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.param-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+.param-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent-cyan);
+}
+
+/* ── Range slider ── */
+.param-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: var(--radius-full);
+  background: var(--border-default);
+  outline: none;
+  cursor: pointer;
+  accent-color: var(--accent-cyan);
+}
+
+.param-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+  cursor: grab;
+  transition: transform var(--transition-fast);
+}
+
+.param-slider::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.2); }
+
+/* ── Toggle ── */
+.param-toggle {
+  width: 36px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  padding: 2px;
+  cursor: pointer;
+  transition: background var(--transition-base), border-color var(--transition-base);
+  flex-shrink: 0;
+}
+
+.param-toggle.active {
+  background: rgba(0, 212, 255, 0.2);
+  border-color: var(--accent-cyan);
+}
+
+.param-toggle-thumb {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  transition: transform var(--transition-spring), background var(--transition-base);
+}
+
+.param-toggle.active .param-toggle-thumb {
+  transform: translateX(16px);
+  background: var(--accent-cyan);
+}
+
+/* ── Button ── */
+.param-btn {
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--bg-glass);
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.param-btn:hover {
+  background: var(--bg-glass-hover);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--glow-cyan);
+}

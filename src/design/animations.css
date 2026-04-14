@@ -1,0 +1,110 @@
+/* ── Fade ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── Scale ── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.9); }
+}
+
+/* ── Slide ── */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+/* ── Pulse / glow ── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: var(--glow-cyan); }
+  50%       { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+}
+
+/* ── Ripple ── */
+@keyframes ripple {
+  0%   { transform: scale(0); opacity: 0.6; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+/* ── Spin ── */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Blink ── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ── Float ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* ── Shimmer (loading skeleton) ── */
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-elevated) 0%,
+    var(--bg-glass-hover) 50%,
+    var(--bg-elevated) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Utility animation classes ── */
+.animate-fade-in     { animation: fadeIn     0.3s var(--ease-out) both; }
+.animate-fade-in-up  { animation: fadeInUp   0.4s var(--ease-out) both; }
+.animate-fade-in-down{ animation: fadeInDown 0.4s var(--ease-out) both; }
+.animate-scale-in    { animation: scaleIn    0.25s var(--ease-spring) both; }
+.animate-pulse       { animation: pulse      2s ease-in-out infinite; }
+.animate-float       { animation: float      3s ease-in-out infinite; }
+.animate-spin        { animation: spin       1s linear infinite; }
+
+/* ── Stagger delays ── */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
