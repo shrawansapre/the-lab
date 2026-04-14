@@ -10,10 +10,34 @@ import { MODULES } from '../index.js';
 import '../../components/ExperimentCanvas/ExperimentCanvas.css';
 
 const HINTS = [
-  { count: 2,  text: 'That line minimises something. We\'ll talk about what.' },
-  { count: 5,  text: 'Try placing an outlier far from the cluster.' },
-  { count: 10, text: 'Watch R² — it tells you how well the line explains the data.' },
-  { count: 15, text: 'You\'re doing linear regression. Manually.' },
+  {
+    count: 1,
+    text: 'Keep clicking to add more points — anywhere on the canvas.',
+  },
+  {
+    count: 2,
+    text: 'That line is the best straight-line fit through your points. The purple dashes (residuals) show how far each point is from the line — the fit tries to make those as small as possible.',
+  },
+  {
+    count: 3,
+    text: 'R² (R-squared) tells you how good the fit is. 1.0 = perfect line, 0.0 = the line explains nothing. The equation shows the slope (how steeply it rises) and intercept (where it starts).',
+  },
+  {
+    count: 4,
+    text: 'Try placing a point far from the cluster. Watch the line pull toward it and R² drop — one outlier can shift the whole fit.',
+  },
+  {
+    count: 6,
+    text: 'More points = more confident fit. With only 2–3 points, the line is just guessing. With 20+, it starts to reveal a real pattern.',
+  },
+  {
+    count: 7,
+    text: 'This is linear regression — one of the oldest and most used models in statistics. Everything you\'re seeing (slope, intercept, R²) is computed in a single formula. No trial and error needed.',
+  },
+  {
+    count: 8,
+    text: 'What if the true pattern isn\'t a straight line? That\'s where things get interesting — and where the next rooms begin.',
+  },
 ];
 
 export function mount(container, _params) {
@@ -216,7 +240,7 @@ export function mount(container, _params) {
     hintEl.className = 'lobby-hint';
     hintEl.textContent = hint.text;
     canvasWrap.appendChild(hintEl);
-    setTimeout(() => { if (hintEl) { hintEl.style.opacity = '0'; hintEl.style.transition = 'opacity 1s ease'; } }, 4000);
+    setTimeout(() => { if (hintEl) { hintEl.style.opacity = '0'; hintEl.style.transition = 'opacity 1.5s ease'; } }, 9000);
   }
 
   // ── Narrative overlay ──

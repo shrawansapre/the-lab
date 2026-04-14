@@ -34,8 +34,8 @@ export const MODULES = [
     slug: 'bias-variance',
     tagline: 'Too simple. Too complex. The knife edge between.',
     phase: 1,
-    unlocked: false,
-    narrative: `A model that's too simple can't capture the truth. Too complex, and it memorises noise.\n\nYour job: find the knife edge.\n\n— Dr. Vector`,
+    unlocked: true,
+    narrative: `A model that's too simple can't capture the truth. Too complex, and it memorises noise.\n\nGenerate a noisy sine dataset. Set degree to 1 — the line can't follow the curve (underfitting).\n\nNow crank the degree to 12. The curve chases every point. Reveal the test set. Watch what happens.\n\nThe model learned the noise, not the pattern. That's overfitting.\n\n— Dr. Vector`,
     loader: () => import('./bias-variance/bias-variance.js'),
   },
   {
@@ -44,8 +44,8 @@ export const MODULES = [
     slug: 'gradient-descent',
     tagline: 'Learning is just hiking downhill — carefully.',
     phase: 1,
-    unlocked: false,
-    narrative: `Imagine you're blindfolded on a hilly landscape. Your goal: find the lowest point.\n\nYou can only feel the slope beneath your feet. That slope is the gradient.\n\n— Dr. Vector`,
+    unlocked: true,
+    narrative: `Imagine you're blindfolded on a hilly landscape. Your goal: find the lowest valley.\n\nYou can only feel the slope beneath your feet. Each step, you move downhill. That slope is the gradient.\n\nTry SGD with a high learning rate — watch it bounce. Drop it low — watch it crawl. Then try Adam. It adapts the step size per direction and converges cleanly.\n\nThe green dot is the minimum. Your job: reach it.\n\n— Dr. Vector`,
     loader: () => import('./gradient-descent/gradient-descent.js'),
   },
   {
@@ -64,8 +64,8 @@ export const MODULES = [
     slug: 'neural-architecture',
     tagline: 'Neurons vote. Layers abstract. Mistakes teach.',
     phase: 1,
-    unlocked: false,
-    narrative: `Each neuron is just a weighted sum with an opinion filter applied.\n\nChain enough of them, and the network learns to see.\n\n— Dr. Vector`,
+    unlocked: true,
+    narrative: `Each neuron computes a weighted sum of its inputs, then passes it through an activation function — the "opinion filter."\n\nWithout that filter (linear mode), any deep network collapses to a single linear transformation. It cannot solve XOR — a problem no straight line can separate.\n\nSwitch to sigmoid. Pick an input. Run the forward pass. Watch activations propagate layer by layer.\n\nBlue edges carry positive weights. Red carry negative. Brightness shows activation strength.\n\n— Dr. Vector`,
     loader: () => import('./neural-architecture/neural-architecture.js'),
   },
   {

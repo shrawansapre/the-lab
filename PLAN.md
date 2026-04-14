@@ -35,30 +35,33 @@ An interactive science laboratory for DS/ML/AI. Every concept is a "lab room." U
 
 ---
 
-## Phase 1 — MVP: Three Core Modules
-**Goal:** Three complete, polished, shareable modules. The concept proven.
+## Phase 1 — MVP: Three Core Modules ✅ COMPLETE
 
-### Module: Bias/Variance Lab (`bias-variance`)
-- [ ] DataScatterboard — click to place points, auto-generate datasets (moons, circles, XOR)
-- [ ] Polynomial regression via TF.js web worker
-- [ ] Degree dial (1–12) — complexity slider
-- [ ] Train/test split toggle with animated reveal
-- [ ] Live train MSE vs test MSE display
-- [ ] Dartboard metaphor panel
+### Module: Bias/Variance Lab (`bias-variance`) ✅
+- [x] Click to place points (80/20 train/test split per point)
+- [x] Auto-generate datasets: Noisy Sine, Noisy Linear
+- [x] Polynomial regression (pure JS, Vandermonde + Gaussian elim, Ridge regularised)
+- [x] Degree dial (1–12) — curve color shifts green→cyan→amber→red
+- [x] Reveal Test Set toggle — shows amber test dots + purple residual dashes
+- [x] Live Train MSE / Test MSE in footer with OVERFIT warning
 
-### Module: Gradient Descent Terrain (`gradient-descent`)
-- [ ] TerrainRenderer — Three.js 2-param loss landscape (MSE on linear regression)
-- [ ] Custom elevation shader (green low → red high)
-- [ ] Optimizer selector: SGD, SGD+Momentum, Adam
-- [ ] Learning rate slider with "too high" explosion mode
-- [ ] "Drop hiker" — animated sphere descends
-- [ ] Speed control, topographic view toggle
+### Module: Gradient Descent Terrain (`gradient-descent`) ✅
+- [x] Three.js 3D terrain — elongated bowl L=0.1x²+y² (optimal for SGD vs Adam demo)
+- [x] Vertex colours: green (low loss) → yellow → red (high)
+- [x] Optimizer selector: SGD, SGD+Momentum, Adam
+- [x] Learning rate slider (0.01–1.5), Speed slider (1–20×)
+- [x] Animated hiker sphere with pulsing glow ring + trail line
+- [x] Green minimum marker, OrbitControls camera
+- [x] Live Loss / Steps / w₁ / w₂ in footer
 
-### Module: Neural Architecture Hall (`neural-architecture`, mini version)
-- [ ] NetworkBuilder — drag-and-drop node-link diagram (2→4→1 default)
-- [ ] Forward pass animation — activations light up
-- [ ] XOR demo — fails with linear, succeeds with ReLU
-- [ ] Backprop "blame" — edges glow red by gradient magnitude, animate backward
+### Module: Neural Architecture Hall (`neural-architecture`) ✅
+- [x] Fixed 2→4→1 canvas network diagram
+- [x] Blue/red edges by weight sign, width by magnitude
+- [x] Activation mode toggle: Sigmoid (solves XOR) vs Linear (fails XOR)
+- [x] XOR input selector — 4 cases
+- [x] Layered forward pass animation (400ms per layer)
+- [x] Output node colour: green=correct, red=wrong
+- [x] Live result in footer with ✓/✗ verdict
 
 ---
 
@@ -100,9 +103,9 @@ An interactive science laboratory for DS/ML/AI. Every concept is a "lab room." U
 |----|-------|-------|--------|
 | `home` | Home (Mosaic) | 0 | ✅ Live |
 | `lobby` | The Lobby | 0 | ✅ Live |
-| `bias-variance` | Bias/Variance Lab | 1 | 🔲 Stub |
-| `gradient-descent` | Gradient Descent Terrain | 1 | 🔲 Stub |
-| `neural-architecture` | Neural Architecture Hall | 1 | 🔲 Stub |
+| `bias-variance` | Bias/Variance Lab | 1 | ✅ Live |
+| `gradient-descent` | Gradient Descent Terrain | 1 | ✅ Live |
+| `neural-architecture` | Neural Architecture Hall | 1 | ✅ Live |
 | `data-shape` | Shape of Data | 2 | 🔲 Stub |
 | `decision-forest` | Decision Forest | 2 | 🔲 Stub |
 | `convolution-engine` | Convolution Engine | 2 | 🔲 Stub |

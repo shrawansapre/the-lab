@@ -103,6 +103,44 @@
   background: var(--accent-cyan);
 }
 
+/* ── Select ── */
+.param-select {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-1);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.param-select:focus { border-color: var(--accent-cyan); }
+
+/* ── Divider ── */
+.param-divider {
+  padding: var(--space-2) 0 0;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+}
+.param-divider-label { color: var(--text-tertiary); font-size: 10px; }
+
+/* ── Stat display inside panel ── */
+.param-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-1) 0;
+}
+.param-stat-label { font-size: var(--text-xs); color: var(--text-tertiary); }
+.param-stat-value { font-family: var(--font-mono); font-size: var(--text-sm); color: var(--accent-cyan); }
+.param-stat-value.warn { color: var(--accent-amber); }
+.param-stat-value.bad  { color: var(--accent-red); }
+
 /* ── Button ── */
 .param-btn {
   width: 100%;

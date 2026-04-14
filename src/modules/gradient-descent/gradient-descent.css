@@ -1,0 +1,14 @@
+.gd-three-wrap {
+  flex: 1;
+  min-height: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background: #080a12;
+}
+
+.gd-three-wrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}

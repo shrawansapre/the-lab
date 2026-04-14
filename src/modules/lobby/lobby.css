@@ -34,13 +34,21 @@
 
 .lobby-hint {
   position: absolute;
-  bottom: var(--space-10);
+  bottom: var(--space-6);
   left: 50%;
   transform: translateX(-50%);
+  width: min(560px, calc(100% - var(--space-16)));
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-5);
   font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--text-tertiary);
-  white-space: nowrap;
+  font-size: var(--text-xs);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  white-space: normal;
+  text-align: center;
   animation: fadeInUp 0.5s ease both;
   pointer-events: none;
 }
